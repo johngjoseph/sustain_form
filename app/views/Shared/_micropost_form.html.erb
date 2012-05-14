@@ -1,0 +1,19 @@
+
+  <style>
+      #ta1count { border: 0; }
+    </style>
+
+
+<%= form_for @micropost do |f| %>
+  <%= render 'shared/error_messages', :object => f.object %>
+  <div class="field">
+	 <%= f.text_area :content %>
+	<p> Your nuts can only take so much. <span id="counter"> </span> letters left! </p>
+	<%= countdown_field('micropost_content', 'counter',140, :frequency =>0.10) %>
+
+	
+  </div>
+  <div class="actions">
+    <%= f.submit "Submit" %>
+  </div>
+<% end %>
